@@ -1,4 +1,4 @@
-require './my_enumerable'
+require_relative './my_enumerable'
 class MyList
   include MyEnumerable
   def initialize(*args)
@@ -9,7 +9,8 @@ class MyList
     @list.each { |items| yield items if block_given? }
   end
 end
-list = MyList.new(1, 2, 3, 4, 5)
+
+list = MyList.new(1, 2, 3, 4)
 
 list.all? { |e| e < 5 }
 list.all? { |e| e > 5 }
